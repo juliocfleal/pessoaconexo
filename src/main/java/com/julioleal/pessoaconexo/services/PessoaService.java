@@ -16,10 +16,20 @@ public class PessoaService {
 	private PessoaRepository repo;
 	
 	
-	//Caso a requisicao nao encontre o id, uma exessao personalizada e lacanda
 	public Pessoa buscar(Integer id) {
 	Optional<Pessoa> obj = repo.findById(id);
+	//Caso a requisicao nao encontre o id, uma exessao personalizada e lacanda
 	return obj.orElseThrow(() -> new ObjectNotFoundException(
 			 "Pessoa não encontrada! Id: " + id ));
 	}
+	 public Pessoa adicionar(Pessoa obj) {
+		 obj.setId(null);
+		 return repo.save(obj);
+	 }
+	 
+	 public Pessoa atualizar(Pessoa obj) {
+		 buscar(obj.getId());
+		 return repo.save(obj);
+	 }
+	
 }

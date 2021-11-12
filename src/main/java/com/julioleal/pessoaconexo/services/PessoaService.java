@@ -1,5 +1,6 @@
 package com.julioleal.pessoaconexo.services;
 
+import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -32,4 +33,12 @@ public class PessoaService {
 		 return repo.save(obj);
 	 }
 	
+	 public void deletar(Integer id) {
+		 buscar(id);
+		 repo.deleteById(id);
+	 }
+	 
+	 public List<Pessoa> buscarPessoas(){
+		 return repo.findAll();
+	 }
 }

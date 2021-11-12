@@ -1,6 +1,7 @@
 package com.julioleal.pessoaconexo.resources;
 
 import java.net.URI;
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -42,5 +43,18 @@ public class PessoaResource {
 		obj = service.atualizar(obj);
 		return ResponseEntity.noContent().build();
 		
+	}
+	
+	@RequestMapping(value = "/{id}", method = RequestMethod.DELETE)
+	public ResponseEntity<Void> deletar(@PathVariable Integer id){
+		service.deletar(id);
+		return ResponseEntity.noContent().build();
+		
+	}
+	
+	@RequestMapping(method=RequestMethod.GET)
+	public ResponseEntity<List<Pessoa>> buscarPessoas() {
+		List<Pessoa> lista = service.buscarPessoas();
+		return ResponseEntity.ok().body(lista);
 	}
 }

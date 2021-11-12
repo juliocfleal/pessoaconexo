@@ -15,7 +15,11 @@ public class Pessoa implements Serializable{
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private Integer id;
+	
+	
 	private String nome;
+	
+	
 	private String cpf;
 
 	public Pessoa() {
@@ -23,6 +27,12 @@ public class Pessoa implements Serializable{
 	}
 
 	public Pessoa(String nome, String cpf) {
+		this.nome = nome;
+		this.cpf = cpf;
+	}
+
+	public Pessoa(Integer id, String nome, String cpf) {
+		this.id = id;
 		this.nome = nome;
 		this.cpf = cpf;
 	}

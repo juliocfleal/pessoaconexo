@@ -6,6 +6,7 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.julioleal.pessoaconexo.DTO.PessoaDTO;
 import com.julioleal.pessoaconexo.domain.Pessoa;
 import com.julioleal.pessoaconexo.repositories.PessoaRepository;
 import com.julioleal.pessoaconexo.services.exeptions.ObjectNotFoundException;
@@ -40,5 +41,11 @@ public class PessoaService {
 	 
 	 public List<Pessoa> buscarPessoas(){
 		 return repo.findAll();
+	 }
+	 
+	 //Transforma a entidade em DTO 
+	 public Pessoa fromDTO(PessoaDTO objDTO) {
+		 return new Pessoa(objDTO.getId(), objDTO.getNome(), objDTO.getCpf());
+		 
 	 }
 }

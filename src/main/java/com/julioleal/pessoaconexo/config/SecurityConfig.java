@@ -10,6 +10,7 @@ import org.springframework.security.config.annotation.authentication.builders.Au
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
+import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.web.cors.CorsConfiguration;
@@ -17,6 +18,7 @@ import org.springframework.web.cors.CorsConfigurationSource;
 import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
 
 import com.julioleal.pessoaconexo.security.JWTAuthenticationFilter;
+import com.julioleal.pessoaconexo.security.JWTAuthorizationFilter;
 import com.julioleal.pessoaconexo.security.JWTUtil;
 
 @Configuration
@@ -34,20 +36,23 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 	
 	// permitindo o endpoint do banco de dados sem validacao
 	private static final String[] PUBLIC_MATCHERS = {
-		"/h2-console/**",
-//			"/pessoa/**",
-//			"/cliente/**"
+		"/h2-console/**"
 	};
+	
+
 
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
 
-		if (Arrays.asList(env.getActiveProfiles()).contains("test")) {
+		if (Arrays.asList(env.getActiveProfiles()).contains("testE")) {
 			http.headers().frameOptions().disable();
 		}
 		http.cors().and().csrf().disable();
-		http.authorizeRequests().antMatchers(PUBLIC_MATCHERS).permitAll().anyRequest().authenticated();
+		http.authorizeRequests()
+		.antMatchers(PUBLIC_MATCHERS).permitAll().anyRequest().authenticated();
 		http.addFilter(new JWTAuthenticationFilter(authenticationManager(), jwtUtil));
+		http.addFilter(new JWTAuthorizationFilter(authenticationManager(), jwtUtil, userDetailsService));
+		http.sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS);
 	}
 
 	@Override
@@ -58,9 +63,11 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 	
 	
 	@Bean
-	CorsConfigurationSource corConfigurationSource() {
+	CorsConfigurationSource corsConfigurationSource() {
+		CorsConfiguration configuration = new CorsConfiguration().applyPermitDefaultValues();
+		configuration.setAllowedMethods(Arrays.asList("POST", "GET", "PUT", "DELETE", "OPTIONS"));
 		final UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
-		source.registerCorsConfiguration("/**", new CorsConfiguration().applyPermitDefaultValues());
+		source.registerCorsConfiguration("/**", configuration);
 		return source;
 	}
 

@@ -16,7 +16,7 @@ return (
     <input type="text" className="form-control form-control-lg mb-3" placeholder="nome" />
     <input type="text" className="form-control form-control-lg mb-3" placeholder="CPF" />
     <div className="d-flex justify-content-around">
-    <button className="btn btn-lg btn-secondary">Ataulizar</button>
+    <button className="btn btn-lg btn-secondary">Atualizar</button>
     <button className="btn btn-lg btn-back">Voltar</button>
 </div>
   </div>

@@ -1,0 +1,75 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap');
+
+:root {
+  --primary: #1e81b0;
+  --head: #1e82b02a;
+}
+
+
+html,
+body{
+  height: 100%;
+  font-family: 'Open Sans';
+  letter-spacing: -0.03em;
+}
+
+.bg-primary{
+  background-color: var(--head) !important;
+}
+
+.bg-head{
+  background-color: var(--head);
+  box-shadow: 0px 0px 11px 6px rgba(0,0,0,0.08);
+  border-radius: 5px;
+  display: inline-flexbox;
+  padding: 1em;
+}
+
+.pad{
+  padding: 2em;
+}
+
+.box{
+  background: #fff;
+  box-shadow: 0px 0px 11px 6px rgba(0,0,0,0.08);
+  border-radius: 5px;
+  display: inline-flexbox;
+  padding: 50px;
+
+}
+
+.btn-secondary{
+  background-color: #0a5d83;
+  box-shadow: 0px 0px 11px 6px rgba(0,0,0,0.08);
+  display: inline-flexbox;
+  padding: 1em;
+}
+.btn-back{
+  background-color: #830a0a96;
+  box-shadow: 0px 0px 11px 6px rgba(0,0,0,0.08);
+  display: inline-flexbox;
+  padding: 1em;
+}
+
+.btn-dlt{
+  background-color: #830a0a96;
+  box-shadow: 0px 0px 11px 6px rgba(0,0,0,0.08);
+  display: inline-flexbox;
+  padding-inline: 2em;
+  font-weight: bold;
+}
+
+.btn-atl{
+  background-color: #0a5d836b;
+  box-shadow: 0px 0px 11px 6px rgba(0,0,0,0.08);
+  display: inline-flexbox;
+  padding-inline: 2em;
+  font-weight: bold;
+}
+.bv{
+  color: var(--primary);
+  background-color: #0a5d8317;
+  box-shadow: 0px 0px 11px 6px rgba(0,0,0,0.08);
+  font-weight: bold;
+  font-size: 5em;
+}

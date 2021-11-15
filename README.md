@@ -28,7 +28,7 @@ pessoas que populam a tabela.
 - Frontend pensado para manter uma aparencia harmonica e leve.
 - Configuracao do Token no backend toda feita com capricho.
 - Endpoints funcionando corretamente, devolvendo JSON organizados e intuitivos.
-- Padrao de nome de classes e metodos em portugues, com execessao dos requeridos pelos padores dos frameworks.
+- Padrao de nome de classes e metodos em portugues, com excecao dos requeridos pelos padores dos frameworks.
 - Validacao de CPF via Hibernate.
 
 ## Rodando aqui usando

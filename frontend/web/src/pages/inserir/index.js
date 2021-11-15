@@ -14,9 +14,9 @@ const Inserir = () => {
     try{
       const response = await api.post('/pessoa/' ,inserido );
       const res = response.data;
-      console.log(inserido)
 
 
+      window.location= "/exibir";
 
     } catch(err) {
       alert(err.message);

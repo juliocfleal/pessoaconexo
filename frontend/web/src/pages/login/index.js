@@ -58,14 +58,14 @@ return (
   <h1 className=" bv col-6 my-auto text-center">Bem vindo a Conexo!</h1>
   </div>
     <br/>
-    <br/>
+
     <input type="text" className="form-control form-control-lg mb-3" placeholder="nome" onChange={(e) => {
       setCredenciais({
         ...credenciais,
         nome: e.target.value,
       })
     }}/>
-    <input type="text" className="form-control form-control-lg mb-3" placeholder="senha" onChange={(e) => {
+    <input type="password" className="form-control form-control-lg mb-3" placeholder="senha" onChange={(e) => {
       setCredenciais({
         ...credenciais,
         senha: e.target.value,

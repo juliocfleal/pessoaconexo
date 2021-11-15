@@ -46,7 +46,7 @@ return (
         nome: e.target.value,
       })
     }}/>
-    <input type="text" className="form-control form-control-lg mb-3" placeholder="senha" onChange={(e) => {
+    <input type="password" className="form-control form-control-lg mb-3" placeholder="senha" onChange={(e) => {
       setCredenciais({
         ...credenciais,
         senha: e.target.value,

@@ -18,15 +18,16 @@ const Login = () => {
 
       const response = await api.post('/login',credenciais );
       const res = response.data;
-console.log(credenciais)
+      console.log(login(response.data.token));
+     
       if(res.error){
         alert(res.message);
         return false;
       }
+     
       window.location= "/exibir";
 
 
-      login(response.data.token);
     } catch(err) {
       alert(err.message);
     }

@@ -33,6 +33,7 @@ const Exibir = ({ pessoas }) => {
     }
 
   };
+  
 
 return (
 <div className="container-fluid h-100 bg-primary">

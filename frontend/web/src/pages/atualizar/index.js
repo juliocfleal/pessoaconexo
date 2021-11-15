@@ -9,7 +9,6 @@ const Atualizar = ({ rata }) => {
 
   const { idPessoa } = useParams();
   const [credenciais, setCredenciais] = useState({
- 
     nome: '',
     cpf: ''
 

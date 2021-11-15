@@ -13,10 +13,10 @@ const Cadastro = () => {
 
   const cadastrar = async() =>{
     try{
-
-      const response = await api.post('/cliente',credenciais );
+      const response = await api.post('/cliente' ,credenciais );
       const res = response.data;
       console.log(credenciais)
+      let id = credenciais.id;
       // if(res.error){
       //   alert(res.message);
       //   return false;

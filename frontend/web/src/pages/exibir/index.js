@@ -24,28 +24,6 @@ const Exibir = () => {
 
 
 
-  // const getExibir = async () =>{
-  //   try{
-
-  //     if(res.error){
-  //       alert(res.message);
-  //       return false;
-  //     }
-  //     setPessoa(res.pessoa);
-  //     console.log(res.map((pessoa) => pessoa.id));
-  //     console.log(pessoa);
-    
-
-  //   }catch(err){
-  //     alert(err.message);
-  //   };
-  // };
-
-  // useEffect(() => {
-  //   getExibir();
-  // }, []
-  //   );
-
 return (
 <div className="container-fluid h-100 bg-primary">
 <Header />
@@ -67,6 +45,9 @@ return (
   </thead>
   {data.map(pessoas => <Pessoas pessoas={pessoas}/>)}
 </table>
+<div className="d-flex justify-content-">
+    <button className="btn btn-lg btn-secondary">Adicionar pessoa</button>
+    </ div>
 </div>
   </div>
 </div>

@@ -1,8 +1,51 @@
+import { useState, useEffect } from 'react';
 import Header from '../../components/header/header';
+import Pessoas from '../../components/pessoastable/pessoastable';
+
+import api from '../../services/api';
 
 
 
 const Exibir = () => {
+
+
+  const [data, setData] = useState([]);
+  const [pessoa,setPessoa] = useState([]);
+  useEffect(() =>{
+    async function loadPessoa(){
+      const response = await api.get('/pessoa');
+      setData(response.data);
+      setPessoa(data.pessoa)
+      console.log(data);
+  
+    }
+    loadPessoa(); 
+  },[pessoa]);
+
+
+
+  // const getExibir = async () =>{
+  //   try{
+
+  //     if(res.error){
+  //       alert(res.message);
+  //       return false;
+  //     }
+  //     setPessoa(res.pessoa);
+  //     console.log(res.map((pessoa) => pessoa.id));
+  //     console.log(pessoa);
+    
+
+  //   }catch(err){
+  //     alert(err.message);
+  //   };
+  // };
+
+  // useEffect(() => {
+  //   getExibir();
+  // }, []
+  //   );
+
 return (
 <div className="container-fluid h-100 bg-primary">
 <Header />
@@ -22,16 +65,7 @@ return (
       <th scope="col"></th>
     </tr>
   </thead>
-  <tbody>
-    <tr>
-      <th scope="row">1</th>
-      <td>Mark</td>
-      <td>Otto</td>
-      <td><div class="d-flex justify-content-around">
-  <button className="btn btn-sm btn-atl">Atualizar</button><button className="btn btn-sm btn-dlt">Deletar</button> </div>
-  </td>
-    </tr>
-  </tbody>
+  {data.map(pessoas => <Pessoas pessoas={pessoas}/>)}
 </table>
 </div>
   </div>

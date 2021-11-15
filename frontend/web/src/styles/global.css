@@ -11,6 +11,8 @@ body{
   height: 100%;
   font-family: 'Open Sans';
   letter-spacing: -0.03em;
+  height: auto;
+  width: auto;
 }
 
 .bg-primary{

@@ -2,6 +2,8 @@ import { Switch } from "react-router-dom";
 import { BrowserRouter, Route } from "react-router-dom";
 
 import './styles/global.css';
+// import { isAuthenticated } from "./services/auth";
+// import PrivateRoute from './privateroute';
 
 import Cadastro from './pages/cadastro';
 import Login from './pages/login';

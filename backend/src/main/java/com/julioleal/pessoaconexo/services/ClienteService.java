@@ -33,15 +33,17 @@ public class ClienteService {
 		return repo.save(obj);
 	}
 
-	public Cliente atualizar(Cliente obj) {
-		buscar(obj.getId());
-		return repo.save(obj);
-	}
-
-	public void deletar(Integer id) {
-		buscar(id);
-		repo.deleteById(id);
-	}
+	//metodo que pode futuramente ser implementado
+	
+//	public Cliente atualizar(Cliente obj) {
+//		buscar(obj.getId());
+//		return repo.save(obj);
+//	}
+//
+//	public void deletar(Integer id) {
+//		buscar(id);
+//		repo.deleteById(id);
+//	}
 
 	public List<Cliente> buscarClientes() {
 		return repo.findAll();

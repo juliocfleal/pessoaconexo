@@ -43,20 +43,23 @@ public class ClienteResource {
 		return ResponseEntity.created(uri).build();
 	}
 
-	@RequestMapping(value = "/{id}", method = RequestMethod.PUT)
-	public ResponseEntity<Void> atualizar(@RequestBody Cliente obj, @PathVariable Integer id) {
-		obj.setId(id);
-		obj = service.atualizar(obj);
-		return ResponseEntity.noContent().build();
-
-	}
-
-	@RequestMapping(value = "/{id}", method = RequestMethod.DELETE)
-	public ResponseEntity<Void> deletar(@PathVariable Integer id) {
-		service.deletar(id);
-		return ResponseEntity.noContent().build();
-
-	}
+	
+	//metodo que pode futuramente ser implementado
+	
+//	@RequestMapping(value = "/{id}", method = RequestMethod.PUT)
+//	public ResponseEntity<Void> atualizar(@RequestBody Cliente obj, @PathVariable Integer id) {
+//		obj.setId(id);
+//		obj = service.atualizar(obj);
+//		return ResponseEntity.noContent().build();
+//
+//	}
+//
+//	@RequestMapping(value = "/{id}", method = RequestMethod.DELETE)
+//	public ResponseEntity<Void> deletar(@PathVariable Integer id) {
+//		service.deletar(id);
+//		return ResponseEntity.noContent().build();
+//
+//	}
 
 	@RequestMapping(method = RequestMethod.GET)
 	public ResponseEntity<List<ClienteDTO>> buscarClientes() {

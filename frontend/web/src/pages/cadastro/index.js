@@ -17,11 +17,8 @@ const Cadastro = () => {
       const res = response.data;
       console.log(credenciais)
       let id = credenciais.id;
-      // if(res.error){
-      //   alert(res.message);
-      //   return false;
-      // }
-      // window.location.reload();
+
+      window.location= "/";
 
     } catch(err) {
       alert(err.message);

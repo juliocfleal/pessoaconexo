@@ -6,6 +6,7 @@ import { useState } from 'react';
 const Cadastro = () => {
 
   const [credenciais, setCredenciais] = useState({
+    id: '',
     nome: '',
     senha: ''
 
@@ -13,7 +14,7 @@ const Cadastro = () => {
 
   const cadastrar = async() =>{
     try{
-      const response = await api.post('/cliente' ,credenciais );
+      const response = await api.post('/cliente/' ,credenciais );
       const res = response.data;
       console.log(credenciais)
       let id = credenciais.id;

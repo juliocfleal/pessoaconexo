@@ -5,6 +5,7 @@ import api from '../../services/api';
 import axios from 'axios';
 
 const Pessoas = ({ pessoas }) =>{
+  let rata='';
 
   const [credenciais, setCredenciais] = useState({
     id:''
@@ -14,8 +15,7 @@ const Pessoas = ({ pessoas }) =>{
   const deletar = async() =>{
     try{
 
-  
-      const response = await axios.delete('http://localhost:8080/pessoa/'+ pessoas.id, );
+        const response = await axios.delete('http://localhost:8080/pessoa/'+ pessoas.id, );
       const res = response.data;
       console.log(credenciais)
       window.location.reload();
@@ -28,9 +28,9 @@ const Pessoas = ({ pessoas }) =>{
   const atualizar = async() =>{
     try{
      
-  
+ 
 
-      window.location= "/atualizar";
+      window.location= 'http://localhost:3000/atualizar/' + pessoas.id;
     } catch(err) {
       alert(err.message);
     }
@@ -44,7 +44,7 @@ const Pessoas = ({ pessoas }) =>{
       <td>{pessoas.nome}</td>
       <td>{pessoas.cpf}</td>
       <td><div class="d-flex justify-content-around">
-  <button className="btn btn-sm btn-atl" onClick={atualizar}>Atualizar</button><button className="btn btn-sm btn-dlt" onClick={deletar}>Deletar</button> </div>
+  <button rata={pessoas} className="btn btn-sm btn-atl" onClick={atualizar}>Atualizar</button><button className="btn btn-sm btn-dlt" onClick={deletar}>Deletar</button> </div>
   </td>
     </tr>
   </tbody>

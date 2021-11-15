@@ -19,10 +19,10 @@ const Routes = () => {
     <BrowserRouter>
       <Switch>
         <Route path="/" exact ><Login /></Route>
-        <Route path="/cadastro" exact><Cadastro /></Route>
-        <Route path="/exibir" exact><Exibir /></Route>
-        <Route path="/inserir" exact><Inserir /></Route>
-        <Route path="/atualizar" exact><Atualizar /></Route>
+        <Route path="/cadastro/" exact><Cadastro /></Route>
+        <Route path="/exibir/" exact><Exibir /></Route>
+        <Route path="/inserir/" exact><Inserir /></Route>
+        <Route path="/atualizar/:idPessoa" exact><Atualizar /></Route>
 
 
 

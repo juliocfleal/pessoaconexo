@@ -6,7 +6,7 @@ import api from '../../services/api';
 
 
 
-const Exibir = () => {
+const Exibir = ({ pessoas }) => {
 
 
   const [data, setData] = useState([]);
@@ -16,7 +16,7 @@ const Exibir = () => {
       const response = await api.get('/pessoa');
       setData(response.data);
       setPessoa(data.pessoa)
-      console.log(data);
+
   
     }
     loadPessoa(); 
@@ -26,7 +26,7 @@ const Exibir = () => {
     try{
 
   
-      const response = 
+  
       window.location= "/inserir";
     } catch(err) {
       alert(err.message);
@@ -63,6 +63,7 @@ return (
 </div>
 </div>
 </div>
+
 );
 };
 

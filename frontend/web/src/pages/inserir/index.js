@@ -1,8 +1,39 @@
 import Header from '../../components/header/header';
 import logo from '../../assets/logo-conexo.svg';
-
+import api from '../../services/api';
+import { useState } from 'react';
 
 const Inserir = () => {
+  const [inserido, setInserido] = useState({
+    nome: '',
+    cpf: ''
+
+  });
+
+  const inserir = async() =>{
+    try{
+      const response = await api.post('/pessoa/' ,inserido );
+      const res = response.data;
+      console.log(inserido)
+
+
+
+    } catch(err) {
+      alert(err.message);
+    }
+
+  };
+  
+  
+  const voltar = async() =>{
+    try{
+      window.location= "/exibir";
+    } catch(err) {
+      alert(err.message);
+    }
+  
+  };
+
 return (
 <div className="container-fluid h-100 bg-primary">
 <Header />
@@ -13,11 +44,21 @@ return (
     <h1 className="text-center">Inserir nova Pessoa</h1>
     <br/>
     <br/>
-    <input type="text" className="form-control form-control-lg mb-3" placeholder="nome" />
-    <input type="text" className="form-control form-control-lg mb-3" placeholder="CPF" />
+    <input type="text" className="form-control form-control-lg mb-3" placeholder="nome" onChange={(e) => {
+      setInserido({
+        ...inserido,
+        nome: e.target.value,
+      })
+    }}/>
+    <input type="text" className="form-control form-control-lg mb-3" placeholder="CPF" onChange={(e) => {
+      setInserido({
+        ...inserido,
+        cpf: e.target.value,
+      })
+    }}/>
     <div className="d-flex justify-content-around">
-    <button className="btn btn-lg btn-secondary">Inserir</button>
-    <button className="btn btn-lg btn-back">Voltar</button>
+    <button className="btn btn-lg btn-secondary"onClick={inserir}>Inserir</button>
+    <button className="btn btn-lg btn-back" onClick={voltar}>Voltar</button>
 </div>
   </div>
 </div>

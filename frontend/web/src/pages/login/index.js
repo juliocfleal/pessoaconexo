@@ -23,7 +23,7 @@ console.log(credenciais)
         alert(res.message);
         return false;
       }
-      window.location.reload();
+      window.location= "/exibir";
 
 
       login(response.data.token);
@@ -33,6 +33,18 @@ console.log(credenciais)
 
   };
 
+
+  const cadastrar = async() =>{
+    try{
+
+  
+
+      window.location= "/cadastro";
+    } catch(err) {
+      alert(err.message);
+    }
+
+  };
 
 return (
 <div className="container-fluid h-100 bg-primary">
@@ -62,15 +74,15 @@ return (
     <div className="text-center">
     <button className="btn btn-lg btn-secondary" onClick={login}>Logar</button>
 </div>
-
-{/* <link to="/cadastrar">
-<h5 className="text-center">Sem cadastro? Clique aqui para se cadastrar!</h5>
-<link /> */}
-  </div>
+<br/>
+<div className="text-center">
+<button class="btn btn-sm " tabindex="-1" role="button" aria-disabled="true" onClick={cadastrar}>Clique aqui para se cadastrar!</button>
 </div>
 
+</div></div></div>
+
 </div>
-</div>
+
 );
 };
 

@@ -29,10 +29,8 @@ const Pessoas = ({ pessoas }) =>{
     try{
 
   
-      const response = await axios.patch('http://localhost:8080/pessoa/'+ pessoas.id, );
-      const res = response.data;
-      console.log(credenciais)
-  
+
+      window.location= "/atualizar";
     } catch(err) {
       alert(err.message);
     }

@@ -22,7 +22,17 @@ const Exibir = () => {
     loadPessoa(); 
   },[pessoa]);
 
+  const adicionar = async() =>{
+    try{
 
+  
+      const response = 
+      window.location= "/inserir";
+    } catch(err) {
+      alert(err.message);
+    }
+
+  };
 
 return (
 <div className="container-fluid h-100 bg-primary">
@@ -46,7 +56,7 @@ return (
   {data.map(pessoas => <Pessoas pessoas={pessoas}/>)}
 </table>
 <div className="d-flex justify-content-">
-    <button className="btn btn-lg btn-secondary">Adicionar pessoa</button>
+    <button className="btn btn-lg btn-secondary"onClick={adicionar}>Adicionar pessoa</button>
     </ div>
 </div>
   </div>

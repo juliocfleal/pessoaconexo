@@ -3,6 +3,19 @@ import Header from '../../components/header/header';
 
 
 const Atualizar = () => {
+
+  // const atualizar = async() =>{
+  //   try{
+  //     const response = await axios.put('http://localhost:8080/pessoa/'+ pessoas.id, );
+     
+  
+
+  //     window.location= "/atualizar";
+  //   } catch(err) {
+  //     alert(err.message);
+  //   }
+
+  // };
 return (
 <div className="container-fluid h-100 bg-primary">
 <Header />

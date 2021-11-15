@@ -27,7 +27,7 @@ const Pessoas = ({ pessoas }) =>{
 
   const atualizar = async() =>{
     try{
-
+     
   
 
       window.location= "/atualizar";

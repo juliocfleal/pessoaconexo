@@ -30,6 +30,7 @@ pessoas que populam a tabela.
 - Endpoints funcionando corretamente, devolvendo JSON organizados e intuitivos.
 - Padrao de nome de classes e metodos em portugues, com excecao dos requeridos pelos padores dos frameworks.
 - Validacao de CPF via Hibernate.
+- Metodo atualizar pessoa funcionando.
 
 ## Rodando aqui usando
 - Windows_NT x64 10.0.19042
@@ -39,7 +40,6 @@ pessoas que populam a tabela.
 - Yarn
 
 ## ToDo (Falta implementar)
-- Popular a tabela atualizar com as informacoes da pessoa.
 - Implementar token JWT no frontend (ja funcionando no backend - para testar comentar os endpoints no metodo 'PUBLIC_MATCHERS' 
 em 'com.julioleal.pessoaconexo.config.SecurityConfig'.
 

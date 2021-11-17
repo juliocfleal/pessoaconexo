@@ -52,7 +52,6 @@ const Atualizar = ({ rata }) => {
     } catch(err) {
       alert(err.message);
     }
-  
   };
   
 

@@ -1,10 +1,11 @@
 import Header from '../../components/header/header';
-
+import axios from 'axios';
 import sobre from '../../assets/sobre-conexo.svg';
 import api from '../../services/api';
 import { useState } from 'react';
 
-
+export const TOKEN_KEY = "@conexo";
+export const getToken =() => localStorage.getItem(TOKEN_KEY);
 const Login = () => {
 
   const [credenciais, setCredenciais] = useState({
@@ -17,19 +18,21 @@ const Login = () => {
     try{
 
       const response = await api.post('/login',credenciais );
+      
+
       const res = response.data;
-      console.log(login(response.data.token));
+
      
+      alert(TOKEN_KEY);
       if(res.error){
-        alert(res.message);
+        alert("Usuario ou Senha invalidos.");
         return false;
       }
      
       window.location= "/exibir";
 
-
     } catch(err) {
-      alert(err.message);
+      alert("Usuario ou Senha invalidos.");
     }
 
   };

@@ -21,9 +21,9 @@ const Login = () => {
       
 
       const res = response.data;
-
+      localStorage.setItem(response.headers['authorization']);
      
-      alert(TOKEN_KEY);
+      alert(response.headers['authorization']);
       if(res.error){
         alert("Usuario ou Senha invalidos.");
         return false;

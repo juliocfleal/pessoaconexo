@@ -8,6 +8,7 @@ import api from '../../services/api';
 
 const Exibir = ({ pessoas }) => {
 
+ 
 
   const [data, setData] = useState([]);
   const [pessoa,setPessoa] = useState([]);
@@ -16,13 +17,13 @@ const Exibir = ({ pessoas }) => {
       const response = await api.get('/pessoa');
       setData(response.data);
       setPessoa(data.pessoa)
-
-  
+      
     }
     loadPessoa(); 
   },[pessoa]);
-
+  
   const adicionar = async() =>{
+
     try{
 
   
@@ -39,14 +40,14 @@ return (
 <div className="container-fluid h-100 bg-primary">
 <Header />
 <div className="row pad">
-<div class="d-flex justify-content-center my-auto">
+<div className="d-flex justify-content-center my-auto">
 <div className="col-12 my-auto">
   <div className="box">
     <h1 className="text-center">Lista de Pessoas</h1>
     <br/>
     <br/>
-    <table class="table">
-  <thead class="thead-light">
+    <table className="table">
+  <thead className="thead-light">
     <tr>
       <th scope="col">ID</th>
       <th scope="col">NOME</th>

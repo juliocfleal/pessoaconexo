@@ -43,7 +43,7 @@ const Pessoas = ({ pessoas }) =>{
       <th scope="row">{pessoas.id}</th>
       <td>{pessoas.nome}</td>
       <td>{pessoas.cpf}</td>
-      <td><div class="d-flex justify-content-around">
+      <td><div className="d-flex justify-content-around">
   <button rata={pessoas} className="btn btn-sm btn-atl" onClick={atualizar}>Atualizar</button><button className="btn btn-sm btn-dlt" onClick={deletar}>Deletar</button> </div>
   </td>
     </tr>

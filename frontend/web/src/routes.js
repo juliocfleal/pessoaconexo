@@ -4,7 +4,6 @@ import { BrowserRouter, Route, Switch, Redirect } from "react-router-dom";
 import './styles/global.css';
 
 
-
 import Cadastro from './pages/cadastro';
 import Login from './pages/login';
 import Inserir from './pages/inserir';
@@ -25,9 +24,6 @@ const Routes = () => {
         <Route path="/exibir/" exact><Exibir /></Route>
         <Route path="/inserir/" exact><Inserir /></Route>
         <Route path="/atualizar/:idPessoa" exact><Atualizar /></Route>
-
-
-
     </ Switch>
     </ BrowserRouter>
     );

@@ -4,9 +4,9 @@ import sobre from '../../assets/sobre-conexo.svg';
 import api from '../../services/api';
 import { useState } from 'react';
 
-export const TOKEN_KEY = "@conexo";
-export const getToken =() => localStorage.getItem(TOKEN_KEY);
+
 const Login = () => {
+
 
   const [credenciais, setCredenciais] = useState({
     nome: '',
@@ -18,12 +18,10 @@ const Login = () => {
     try{
 
       const response = await api.post('/login',credenciais );
-      
 
+      localStorage.setItem('token', response.headers['authorization']);
       const res = response.data;
-      localStorage.setItem(response.headers['authorization']);
-     
-      alert(response.headers['authorization']);
+
       if(res.error){
         alert("Usuario ou Senha invalidos.");
         return false;
@@ -80,7 +78,7 @@ return (
 </div>
 <br/>
 <div className="text-center">
-<button class="btn btn-sm " tabindex="-1" role="button" aria-disabled="true" onClick={cadastrar}>Clique aqui para se cadastrar!</button>
+<button className="btn btn-sm " tableIndex="-1"  aria-disabled="true" onClick={cadastrar}>Clique aqui para se cadastrar!</button>
 </div>
 
 </div></div></div>

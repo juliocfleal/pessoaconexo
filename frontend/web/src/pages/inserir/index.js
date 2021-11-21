@@ -38,7 +38,7 @@ return (
 <div className="container-fluid h-100 bg-primary">
 <Header />
 <div className="row pad">
-<div class="d-flex justify-content-center my-auto">
+<div className="d-flex justify-content-center my-auto">
 <div className="col-6 my-auto">
   <div className="box">
     <h1 className="text-center">Inserir nova Pessoa</h1>

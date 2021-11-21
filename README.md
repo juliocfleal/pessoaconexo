@@ -32,6 +32,7 @@ pessoas que populam a tabela.
 - Validacao de CPF via Hibernate.
 - Metodo atualizar pessoa funcionando.
 - Token JWT funcionando no frontend usando axios.
+- Endpoint '/atualizar' com frontend liberado para fiz de teste do funcionamento do token JWT criptografado no backend.
 
 ## Rodando aqui usando
 - Windows_NT x64 10.0.19042

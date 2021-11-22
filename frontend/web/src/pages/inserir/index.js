@@ -4,6 +4,8 @@ import api from '../../services/api';
 import { useState } from 'react';
 
 const Inserir = () => {
+
+ 
   const [inserido, setInserido] = useState({
     nome: '',
     cpf: ''
@@ -33,6 +35,12 @@ const Inserir = () => {
     }
   
   };
+
+  //Esta funcao confere se existe um token e em caso negativo redireciona o usuario para a pagina de login
+  if (localStorage.getItem('token') == null ){
+    alert("Voce pecisar fazer o login para acessar esta Pagina!");
+    window.location= "/";
+  }
 
 return (
 <div className="container-fluid h-100 bg-primary">

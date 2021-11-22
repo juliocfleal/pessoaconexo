@@ -78,7 +78,7 @@ return (
 </div>
 <br/>
 <div className="text-center">
-<button className="btn btn-sm " tableIndex="-1"  aria-disabled="true" onClick={cadastrar}>Clique aqui para se cadastrar!</button>
+<button className="btn btn-sm "  aria-disabled="true" onClick={cadastrar}>Clique aqui para se cadastrar!</button>
 </div>
 
 </div></div></div>

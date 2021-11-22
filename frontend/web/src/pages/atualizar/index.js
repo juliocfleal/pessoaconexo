@@ -54,7 +54,11 @@ const Atualizar = ({ rata }) => {
     }
   };
   
-
+  //Esta funcao confere se existe um token e em caso negativo redireciona o usuario para a pagina de login (trecho comentado para testes no end point mostrando que o back end esta protegido com um token JTW criptografado)
+  // if (localStorage.getItem('token') == null ){
+  //   alert("Voce pecisar fazer o login para acessar esta Pagina!");
+  //   window.location= "/";
+  // }
 
 
 return (
